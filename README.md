@@ -52,7 +52,7 @@ A beautiful, minimalist, and fully responsive To-Do List application built using
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/SrishtiSingh100/ToDoList
 ```
 
 ### 2. Navigate to the Project Folder
