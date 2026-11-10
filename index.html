@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f3ed">
+    <title>Daylight — My To-Do List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-shell">
+
+        <header class="topbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">✳</span>
+                daylight<span class="brand-dot">.</span>
+            </a>
+
+            <div class="topbar-date" id="current-date"></div>
+        </header>
+
+        <main class="dashboard">
+
+            <section class="welcome-section">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL SPACE</p>
+                    <h1>Make today<br><span>count.</span></h1>
+                    <p class="welcome-description">
+                        A little progress each day adds up to big results.
+                    </p>
+                </div>
+
+                <div class="sun-decoration" aria-hidden="true">
+                    <span>✳</span>
+                </div>
+            </section>
+
+            <section class="overview-grid">
+
+                <div class="overview-card progress-card">
+                    <div class="card-top">
+                        <span class="card-label">DAILY PROGRESS</span>
+                        <span class="progress-icon">↗</span>
+                    </div>
+
+                    <div class="progress-content">
+                        <div>
+                            <h2 id="progress-percentage">0%</h2>
+                            <p id="progress-caption">Let's get started!</p>
+                        </div>
+
+                        <div class="progress-ring" id="progress-ring">
+                            <div class="ring-inner">
+                                <span>✦</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="overview-card stat-card">
+                    <div class="card-top">
+                        <span class="card-label">TOTAL TASKS</span>
+                        <span class="stat-icon">✎</span>
+                    </div>
+                    <h2 id="total-count">0</h2>
+                    <p>Things on your list</p>
+                </div>
+
+                <div class="overview-card stat-card completed-stat">
+                    <div class="card-top">
+                        <span class="card-label">COMPLETED</span>
+                        <span class="stat-icon">✓</span>
+                    </div>
+                    <h2 id="completed-count">0</h2>
+                    <p>Little wins today</p>
+                </div>
+
+            </section>
+
+            <section class="todo-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">STAY ORGANIZED</p>
+                        <h2>Your tasks<span>.</span></h2>
+                    </div>
+
+                    <button class="clear-btn" id="clear-completed">
+                        Clear completed ↗
+                    </button>
+                </div>
+
+                <form class="task-form" id="task-form">
+
+                    <div class="task-input-wrap">
+                        <span class="input-plus">＋</span>
+                        <input
+                            type="text"
+                            id="task-input"
+                            placeholder="What needs to get done?"
+                            maxlength="120"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-options">
+
+                        <select id="priority-input" aria-label="Task priority">
+                            <option value="low">Low priority</option>
+                            <option value="medium" selected>Medium priority</option>
+                            <option value="high">High priority</option>
+                        </select>
+
+                        <input
+                            type="date"
+                            id="date-input"
+                            aria-label="Task due date"
+                        >
+
+                        <button type="submit" class="add-btn">
+                            Add task <span>＋</span>
+                        </button>
+
+                    </div>
+                </form>
+
+                <div class="filter-row">
+                    <div class="filters" role="group" aria-label="Filter tasks">
+                        <button class="filter-btn active" data-filter="all">All <span id="all-filter-count">0</span></button>
+                        <button class="filter-btn" data-filter="active">Active</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+
+                    <span class="task-counter" id="task-counter">0 tasks</span>
+                </div>
+
+                <div class="task-list" id="task-list" aria-live="polite">
+                    <!-- Tasks are rendered here -->
+                </div>
+
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-illustration">✿</div>
+                    <h3>Nothing on your list yet</h3>
+                    <p>Add a task and make today a little more productive.</p>
+                </div>
+
+            </section>
+
+            <footer class="footer">
+                <p>Made for slower mornings & bigger dreams.</p>
+                <span>✳</span>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
